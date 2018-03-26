@@ -1,0 +1,10 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: robot_arm
+    relative_path: urdf/05-robot_arm_moveit.xacro
+  SRDF:
+    relative_path: config/Robot_Arm.srdf
+  CONFIG:
+    author_name: Parambeer Singh Negi
+    author_email: negi.parambeer@live.com
+    generated_timestamp: 1521829752

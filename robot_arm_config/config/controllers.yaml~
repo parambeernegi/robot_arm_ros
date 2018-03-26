@@ -1,0 +1,21 @@
+controller_manager_ns: controller_manager
+controller_list:
+   - name: Robot_Arm/Robot_arm_joint_controller
+     action_ns: follow_joint_trajectory
+     type: FollowJointTrajectory
+     default: true
+     joints:
+        - shoulder_pan_joint
+        - shoulder_roll_joint
+        - elbow_pan_joint
+        - elbow_pitch_joint
+        - gripper_pan_joint
+        - gripper_pitch_joint
+
+   - name: Robot_Arm/gripper_controller
+     action_ns: follow_joint_trajectory
+     type: FollowJointTrajectory
+     default: true
+     joints: 
+        - left_gripper_joint
+        - right_gripper_joint

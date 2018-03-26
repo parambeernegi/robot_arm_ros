@@ -1,0 +1,8 @@
+<launch>
+
+<!-- Map server -->
+<arg name="map_file" default="$(find robot_arm_navigation)/maps/office.yaml"/>
+<node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)"/>
+r
+
+</launch>

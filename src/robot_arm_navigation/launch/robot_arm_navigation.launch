@@ -1,7 +1,0 @@
-<launch>
-
-<include file="$(find robot_arm_navigation)/launch/06-robot_arm_diff_full.launch"/>
-<include file="$(find robot_arm_navigation)/launch/diff_wheel_teleop.launch"/>
-<include file="$(find robot_arm_navigation)/launch/gmapping.launch"/>
-
-</launch>

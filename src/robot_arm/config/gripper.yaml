@@ -1,6 +1,0 @@
-Robot_Arm:
-  Gripper_controller:
-    type: "position_controllers/JointGroupPositionController"
-    joints:
-      - left_gripper_joint
-      - right_gripper_joint

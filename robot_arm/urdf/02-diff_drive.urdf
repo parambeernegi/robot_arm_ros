@@ -30,27 +30,11 @@
   <!-- ////////////////////////////////////////////////////-->
   <!--transmission block-->
   <!-- //////////////////////////////////////////////////// -->
-  <link name="base_foot">
-    <visual>
-      <origin rpy="0 0 0" xyz="0 0 0"/>
-      <geometry>
-        <box size="0.001 0.001 0.001"/>
-      </geometry>
-    </visual>
-  </link>
-  <joint name="base" type="fixed">
-    <parent link="base_foot"/>
-    <child link="chassis"/>
-    <origin rpy="0 0 0" xyz="0 0 0.015"/>
-  </joint>
-  <gazebo reference="base_foot">
-    <turnGravityOff>false</turnGravityOff>
-  </gazebo>
   <!-- ////////////////////////////////////////////////////////////-->
   <!-- chassis-->
   <link name="chassis">
     <visual>
-      <origin rpy="-1.57 0 0" xyz="0 0 0"/>
+      <origin rpy="-1.57 0 1.57" xyz="0 0 0"/>
       <geometry>
         <mesh filename="package://robot_arm/meshes/base assembly.dae"/>
       </geometry>
@@ -72,14 +56,14 @@
   <!-- ///////////////////      Wheels      ///////////////////////   -->
   <link name="right_front_wheel">
     <visual>
-      <origin rpy="0 1.57 0" xyz="0 0 0"/>
+      <origin rpy="1.57 0 0" xyz="0 0 0"/>
       <geometry>
         <cylinder length="0.022" radius="0.011"/>
       </geometry>
       <material name="Black"/>
     </visual>
     <collision>
-      <origin rpy="0 1.57 0" xyz="0 0 0"/>
+      <origin rpy="1.57 0 0" xyz="0 0 0"/>
       <geometry>
         <cylinder length="0.022" radius="0.011"/>
       </geometry>
@@ -91,14 +75,14 @@
   </link>
   <link name="right_front_wheel1">
     <visual>
-      <origin rpy="0  0 1.57" xyz="0 0 0"/>
+      <origin rpy="0  1.57 0" xyz="0 0 0"/>
       <geometry>
         <mesh filename="package://robot_arm/meshes/tyre11.dae"/>
       </geometry>
       <material name="Black"/>
     </visual>
     <collision>
-      <origin rpy="0 0 1.57" xyz="0 0 0"/>
+      <origin rpy="0 1.57 0" xyz="0 0 0"/>
       <geometry>
         <mesh filename="package://robot_arm/meshes/tyre11.dae"/>
       </geometry>
@@ -127,8 +111,8 @@
   <joint name="right_front_wheel_joint" type="continuous">
     <parent link="chassis"/>
     <child link="right_front_wheel"/>
-    <origin rpy="0 0 0" xyz="0.115 0.058 0.015"/>
-    <axis xyz="1 0 0"/>
+    <origin rpy="0 0 0" xyz="0.062 -0.115  0.015"/>
+    <axis xyz="0 1 0"/>
     <limit effort="100" velocity="100"/>
     <dynamics damping="0.0" friction="0.0"/>
   </joint>
@@ -144,14 +128,14 @@
   </transmission>
   <link name="right_back_wheel">
     <visual>
-      <origin rpy="0 1.57 0" xyz="0 0 0"/>
+      <origin rpy="1.57 0 0" xyz="0 0 0"/>
       <geometry>
         <cylinder length="0.022" radius="0.011"/>
       </geometry>
       <material name="Black"/>
     </visual>
     <collision>
-      <origin rpy="0 1.57 0" xyz="0 0 0"/>
+      <origin rpy="1.57 0 0" xyz="0 0 0"/>
       <geometry>
         <cylinder length="0.022" radius="0.011"/>
       </geometry>
@@ -163,14 +147,14 @@
   </link>
   <link name="right_back_wheel1">
     <visual>
-      <origin rpy="0  0 1.57" xyz="0 0 0"/>
+      <origin rpy="0  1.57 0" xyz="0 0 0"/>
       <geometry>
         <mesh filename="package://robot_arm/meshes/tyre11.dae"/>
       </geometry>
       <material name="Black"/>
     </visual>
     <collision>
-      <origin rpy="0 0 1.57" xyz="0 0 0"/>
+      <origin rpy="0 1.57 0" xyz="0 0 0"/>
       <geometry>
         <mesh filename="package://robot_arm/meshes/tyre11.dae"/>
       </geometry>
@@ -199,8 +183,8 @@
   <joint name="right_back_wheel_joint" type="continuous">
     <parent link="chassis"/>
     <child link="right_back_wheel"/>
-    <origin rpy="0 0 0" xyz="0.115 -0.062 0.015"/>
-    <axis xyz="1 0 0"/>
+    <origin rpy="0 0 0" xyz="-0.058 -0.115  0.015"/>
+    <axis xyz="0 1 0"/>
     <limit effort="100" velocity="100"/>
     <dynamics damping="0.0" friction="0.0"/>
   </joint>
@@ -216,14 +200,14 @@
   </transmission>
   <link name="left_front_wheel">
     <visual>
-      <origin rpy="0 1.57 0" xyz="0 0 0"/>
+      <origin rpy="1.57 0 0" xyz="0 0 0"/>
       <geometry>
         <cylinder length="0.022" radius="0.011"/>
       </geometry>
       <material name="Black"/>
     </visual>
     <collision>
-      <origin rpy="0 1.57 0" xyz="0 0 0"/>
+      <origin rpy="1.57 0 0" xyz="0 0 0"/>
       <geometry>
         <cylinder length="0.022" radius="0.011"/>
       </geometry>
@@ -235,14 +219,14 @@
   </link>
   <link name="left_front_wheel1">
     <visual>
-      <origin rpy="0  0 1.57" xyz="0 0 0"/>
+      <origin rpy="0  1.57 0" xyz="0 0 0"/>
       <geometry>
         <mesh filename="package://robot_arm/meshes/tyre11.dae"/>
       </geometry>
       <material name="Black"/>
     </visual>
     <collision>
-      <origin rpy="0 0 1.57" xyz="0 0 0"/>
+      <origin rpy="0 1.57 0" xyz="0 0 0"/>
       <geometry>
         <mesh filename="package://robot_arm/meshes/tyre11.dae"/>
       </geometry>
@@ -271,8 +255,8 @@
   <joint name="left_front_wheel_joint" type="continuous">
     <parent link="chassis"/>
     <child link="left_front_wheel"/>
-    <origin rpy="0 0 0" xyz="-0.115 0.058 0.015"/>
-    <axis xyz="1 0 0"/>
+    <origin rpy="0 0 0" xyz="0.062 0.115  0.015"/>
+    <axis xyz="0 1 0"/>
     <limit effort="100" velocity="100"/>
     <dynamics damping="0.0" friction="0.0"/>
   </joint>
@@ -288,14 +272,14 @@
   </transmission>
   <link name="left_back_wheel">
     <visual>
-      <origin rpy="0 1.57 0" xyz="0 0 0"/>
+      <origin rpy="1.57 0 0" xyz="0 0 0"/>
       <geometry>
         <cylinder length="0.022" radius="0.011"/>
       </geometry>
       <material name="Black"/>
     </visual>
     <collision>
-      <origin rpy="0 1.57 0" xyz="0 0 0"/>
+      <origin rpy="1.57 0 0" xyz="0 0 0"/>
       <geometry>
         <cylinder length="0.022" radius="0.011"/>
       </geometry>
@@ -307,14 +291,14 @@
   </link>
   <link name="left_back_wheel1">
     <visual>
-      <origin rpy="0  0 1.57" xyz="0 0 0"/>
+      <origin rpy="0  1.57 0" xyz="0 0 0"/>
       <geometry>
         <mesh filename="package://robot_arm/meshes/tyre11.dae"/>
       </geometry>
       <material name="Black"/>
     </visual>
     <collision>
-      <origin rpy="0 0 1.57" xyz="0 0 0"/>
+      <origin rpy="0 1.57 0" xyz="0 0 0"/>
       <geometry>
         <mesh filename="package://robot_arm/meshes/tyre11.dae"/>
       </geometry>
@@ -343,8 +327,8 @@
   <joint name="left_back_wheel_joint" type="continuous">
     <parent link="chassis"/>
     <child link="left_back_wheel"/>
-    <origin rpy="0 0 0" xyz="-0.115 -0.062 0.015"/>
-    <axis xyz="1 0 0"/>
+    <origin rpy="0 0 0" xyz="-0.058 0.115  0.015"/>
+    <axis xyz="0 1 0"/>
     <limit effort="100" velocity="100"/>
     <dynamics damping="0.0" friction="0.0"/>
   </joint>
@@ -369,7 +353,7 @@
     </visual>
   </link>
   <joint name="hokuyo_joint" type="fixed">
-    <origin rpy="0 0 0" xyz="0 -0.09 0"/>
+    <origin rpy="0 0 0" xyz="0.07 0 0.08"/>
     <parent link="chassis"/>
     <child link="hokuyo_sensor"/>
   </joint>

@@ -1,0 +1,103 @@
+<?xml version="1.0" ?>
+<robot name="Diff_Drive">
+
+  <!-- ////////////////////////////////////////////////////////////-->
+  <!-- chassis-->
+  <link name="chassis">
+    <visual>
+      <origin rpy="-1.57 0 1.57" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://diff_drive/meshes/base assembly.dae"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <!-- ///////////////////      Wheels      ///////////////////////   -->
+  <link name="right_front_wheel">
+    <visual>
+      <origin rpy="0  1.57 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://diff_drive/meshes/tyre11.dae"/>
+      </geometry>
+      <material name="Black">
+        <color rgba="0 0 0 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="right_front_wheel_joint" type="continuous">
+    <parent link="chassis"/>
+    <child link="right_front_wheel"/>
+    <origin rpy="0 0 0" xyz="0.062 -0.115  0.015"/>
+    <axis xyz="0 1 0"/>
+    <limit effort="100" velocity="100"/>
+    <dynamics damping="0.0" friction="0.0"/>
+  </joint>
+
+  <link name="right_back_wheel">
+    <visual>
+      <origin rpy="0  1.57 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://diff_drive/meshes/tyre11.dae"/>
+      </geometry>
+      <material name="Black">
+        <color rgba="0 0 0 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="right_back_wheel_joint" type="continuous">
+    <parent link="chassis"/>
+    <child link="right_back_wheel"/>
+    <origin rpy="0 0 0" xyz="-0.058 -0.115  0.015"/>
+    <axis xyz="0 1 0"/>
+    <limit effort="100" velocity="100"/>
+    <dynamics damping="0.0" friction="0.0"/>
+  </joint>
+
+  <link name="left_front_wheel">
+    <visual>
+      <origin rpy="0  1.57 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://diff_drive/meshes/tyre11.dae"/>
+      </geometry>
+      <material name="Black">
+        <color rgba="0 0 0 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="left_front_wheel_joint" type="continuous">
+    <parent link="chassis"/>
+    <child link="left_front_wheel"/>
+    <origin rpy="0 0 0" xyz="0.062 0.115  0.015"/>
+    <axis xyz="0 1 0"/>
+    <limit effort="100" velocity="100"/>
+    <dynamics damping="0.0" friction="0.0"/>
+  </joint>
+
+
+  <link name="left_back_wheel">
+    <visual>
+      <origin rpy="0  1.57 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://diff_drive/meshes/tyre11.dae"/>
+      </geometry>
+      <material name="Black">
+        <color rgba="0 0 0 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="left_back_wheel_joint" type="continuous">
+    <parent link="chassis"/>
+    <child link="left_back_wheel"/>
+    <origin rpy="0 0 0" xyz="-0.058 0.115  0.015"/>
+    <axis xyz="0 1 0"/>
+    <limit effort="100" velocity="100"/>
+    <dynamics damping="0.0" friction="0.0"/>
+  </joint>
+
+</robot>
+
+

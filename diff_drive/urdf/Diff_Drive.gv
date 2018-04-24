@@ -1,0 +1,17 @@
+digraph G {
+node [shape=box];
+"chassis" [label="chassis"];
+"left_back_wheel" [label="left_back_wheel"];
+"left_front_wheel" [label="left_front_wheel"];
+"right_back_wheel" [label="right_back_wheel"];
+"right_front_wheel" [label="right_front_wheel"];
+node [shape=ellipse, color=blue, fontcolor=blue];
+"chassis" -> "left_back_wheel_joint" [label="xyz: -0.058 0.115 0.015 \nrpy: 0 -0 0"]
+"left_back_wheel_joint" -> "left_back_wheel"
+"chassis" -> "left_front_wheel_joint" [label="xyz: 0.062 0.115 0.015 \nrpy: 0 -0 0"]
+"left_front_wheel_joint" -> "left_front_wheel"
+"chassis" -> "right_back_wheel_joint" [label="xyz: -0.058 -0.115 0.015 \nrpy: 0 -0 0"]
+"right_back_wheel_joint" -> "right_back_wheel"
+"chassis" -> "right_front_wheel_joint" [label="xyz: 0.062 -0.115 0.015 \nrpy: 0 -0 0"]
+"right_front_wheel_joint" -> "right_front_wheel"
+}

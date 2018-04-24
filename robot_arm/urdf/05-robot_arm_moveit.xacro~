@@ -110,6 +110,22 @@
 
 
 <!-- ////////////////////////////////////////////////////////////-->
+<link name="base">
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+         <box size="0.04 0.04 0.04"/>
+       </geometry>
+     </visual>
+ </link>
+
+ <joint name="base_foot" type="fixed">
+   <parent link="base" />
+   <child link="chassis"/>
+ </joint>
+ <gazebo reference="chassis">
+    <turnGravityOff>false</turnGravityOff>
+  </gazebo>
 <!-- chassis-->
 
 

@@ -8,12 +8,11 @@ project(robot_arm)
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
-  geometry_msgs
   roscpp
   rospy
   rviz
+  std_msgs
   tf
-  tf2
   urdf
   xacro
 )
@@ -75,7 +74,7 @@ find_package(catkin REQUIRED COMPONENTS
 ## Generate added messages and services with any dependencies listed here
 # generate_messages(
 #   DEPENDENCIES
-#   geometry_msgs
+#   std_msgs
 # )
 
 ################################################
@@ -110,7 +109,7 @@ find_package(catkin REQUIRED COMPONENTS
 catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES robot_arm
-#  CATKIN_DEPENDS geometry_msgs roscpp rospy rviz tf tf2 urdf xacro
+#  CATKIN_DEPENDS roscpp rospy rviz std_msgs tf urdf xacro
 #  DEPENDS system_lib
 )
 

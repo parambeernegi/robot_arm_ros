@@ -109,25 +109,8 @@
 
 
 
+
 <!-- ////////////////////////////////////////////////////////////-->
-<link name="base">
-    <visual>
-      <origin rpy="0 0 0" xyz="0 0 0"/>
-      <geometry>
-         <box size="0.04 0.04 0.04"/>
-       </geometry>
-     </visual>
- </link>
-
- <joint name="base_foot" type="fixed">
-   <parent link="base" />
-   <child link="chassis"/>
- </joint>
- <gazebo reference="base">
-    <turnGravityOff>false</turnGravityOff>
-  </gazebo>
-<!-- chassis-->
-
 
  <link name="chassis">
     <visual>
@@ -221,6 +204,7 @@
 <xacro:wheel prefix="right" suffix="back" X="0" Y="1" Z="-1"/>
 <xacro:wheel prefix="left" suffix="front" X="1" Y="0" Z="1"/>
 <xacro:wheel prefix="left" suffix="back" X="0" Y="1" Z="1"/>
+
 
 <!-- /////////////////////////////////////////////////// -->
 
@@ -421,7 +405,7 @@
 <!--////////////////////////////////////////////////////////////////-->
 
   <xacro:macro name="gripper" params="prefix reflect">
-    <joint name="${prefix}_gripper_joint" type="revolute">
+     <joint name="${prefix}_gripper_joint" type="revolute">
       <axis xyz="${-reflect} 0 0"/>
       <limit effort="100.0" lower="0.15" upper="0.548" velocity="1"/>
       <origin rpy="0 -1.57 0" xyz="0 ${reflect*0.01} 0"/>
@@ -436,7 +420,6 @@
 
     <dynamics damping="50" friction="1"/>
     </joint>
-   
     <link name="${prefix}_gripper">
       <visual>
         <origin rpy="0 -1.57 ${(reflect-1)/2*PI}" xyz="0 0 0"/>

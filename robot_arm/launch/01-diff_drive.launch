@@ -1,6 +1,6 @@
 <launch>
 
-<arg name="model" default="$(find robot_arm)/urdf/01-diff_drive.urdf.xacro"/>
+<arg name="model" default="$(find robot_arm)/urdf/04-robot_arm_servo.urdf.xacro"/>
 <arg name="rvizconfig" default="$(find robot_arm)/rviz/robot_arm.rviz"/>
 
 
